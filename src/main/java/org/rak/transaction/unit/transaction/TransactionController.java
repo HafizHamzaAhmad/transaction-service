@@ -30,9 +30,9 @@ public class TransactionController {
 		return new EndpointResponse<>(businessService.create(transactionDto), null);
 	}
 
-	@GetMapping("/test")
-	EndpointResponse<String> test(@RequestParam String transNumber){
-		return new EndpointResponse<>(transactionService.testJasper(transNumber), null);
+	@GetMapping("/view-receipt")
+	public EndpointResponse<String> viewReceipt(@RequestParam String transNumber){
+		return new EndpointResponse<>(transactionService.generateReceiptByRefNo(transNumber), null);
 	}
 
 }

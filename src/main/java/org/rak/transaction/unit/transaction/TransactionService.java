@@ -70,7 +70,7 @@ public class TransactionService implements BusinessService<TransactionDto> {
         return transaction.map(mapper::toDto).orElse(null);
     }
 
-    public String testJasper(String transNumber) {
+    public String generateReceiptByRefNo(String transNumber) {
         TransactionDto transactionDto = getByTransID(transNumber);
 
         if (transactionDto != null) {
